@@ -8,8 +8,8 @@ namespace Koort_Marathon.Models
         public int Id { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime FinishTime { get; set; }
+        public DateTime? StartTime { get; set; }
+        public DateTime? FinishTime { get; set; }
         public int BreakTime { get; set; }
     }
 }

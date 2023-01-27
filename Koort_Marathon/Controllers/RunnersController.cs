@@ -18,6 +18,22 @@ namespace Koort_Marathon.Controllers
         {
             _context = context;
         }
+        public IActionResult AddRunner()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddRunner([Bind("FirstName,LastName")] Runner runner)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(runner);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(runner);
+        }
 
         // GET: Runners
         public async Task<IActionResult> Index()
