@@ -18,6 +18,8 @@ namespace Koort_Marathon.Controllers
         {
             _context = context;
         }
+
+
         public IActionResult AddRunner()
         {
             return View();
@@ -30,10 +32,36 @@ namespace Koort_Marathon.Controllers
             {
                 _context.Add(runner);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(StartProtocol));
             }
             return View(runner);
         }
+
+
+
+        public async Task<IActionResult> StartProtocol()
+        {
+            return View(await _context.Runner.ToListAsync());
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // GET: Runners
         public async Task<IActionResult> Index()
