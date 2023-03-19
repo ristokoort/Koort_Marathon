@@ -2,6 +2,7 @@
 using Koort_Marathon.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Koort_Marathon.Controllers
 {
@@ -14,7 +15,13 @@ namespace Koort_Marathon.Controllers
             _db = db;
 
         }
-       
+        public IActionResult Index()
+        {
+
+            IEnumerable<RunnersMaster> data = _db.runnersMaster.ToList();
+
+            return View(data);
+        }
 
 
         [HttpPost]

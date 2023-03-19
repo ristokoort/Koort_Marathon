@@ -15,5 +15,7 @@ namespace Koort_Marathon.Data
         }
 
         public DbSet<Koort_Marathon.Models.Runner> Runner { get; set; }
+
+        public DbSet<RunnersMaster> runnersMaster { get; set; }
     }
 }
