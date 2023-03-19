@@ -4,14 +4,16 @@ using Koort_Marathon.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Koort_Marathon.Migrations
 {
     [DbContext(typeof(Koort_MarathonContext))]
-    partial class Koort_MarathonContextModelSnapshot : ModelSnapshot
+    [Migration("20230319184250_Changerunnertable")]
+    partial class Changerunnertable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
