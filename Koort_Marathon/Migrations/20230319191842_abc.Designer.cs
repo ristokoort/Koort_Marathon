@@ -4,14 +4,16 @@ using Koort_Marathon.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Koort_Marathon.Migrations
 {
     [DbContext(typeof(Koort_MarathonContext))]
-    partial class Koort_MarathonContextModelSnapshot : ModelSnapshot
+    [Migration("20230319191842_abc")]
+    partial class abc
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,27 +47,6 @@ namespace Koort_Marathon.Migrations
 
                     b.ToTable("Runner");
                 });
-            modelBuilder.Entity("Koort_Marathon.Models.RunnersMaster", b =>
-            {
-                b.Property<int>("id")
-                    .ValueGeneratedOnAdd()
-                    .HasColumnType("int");
-
-                SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
-
-                b.Property<string>("FirstName")
-                    .IsRequired()
-                    .HasColumnType("nvarchar(max)");
-
-                b.Property<string>("LastName")
-                    .IsRequired()
-                    .HasColumnType("nvarchar(max)");
-
-                b.HasKey("id");
-
-                b.ToTable("runnersMaster");
-            });
-
 #pragma warning restore 612, 618
         }
     }
